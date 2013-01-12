@@ -42,7 +42,6 @@ public class ProxyWorker implements Runnable {
     try {
       while (!interrupted && !Thread.interrupted()) {
         int select = selector.select(selectionTimeOut);
-//        int select = selector.selectNow();
         if (select != 0) {
           for (Iterator<SelectionKey> i = selector.selectedKeys().iterator(); i.hasNext(); ) {
             SelectionKey selectionKey = i.next();
