@@ -2,7 +2,7 @@ package ru.odnoklassniki.proxyserver.handlers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.odnoklassniki.proxyserver.utils.CyclicObjectsProvider;
+import ru.odnoklassniki.proxyserver.utils.collections.CyclicObjectsProvider;
 import ru.odnoklassniki.proxyserver.workers.ProxyWorker;
 
 import java.io.IOException;

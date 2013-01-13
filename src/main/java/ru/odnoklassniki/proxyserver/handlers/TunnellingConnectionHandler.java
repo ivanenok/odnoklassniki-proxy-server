@@ -2,7 +2,7 @@ package ru.odnoklassniki.proxyserver.handlers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.odnoklassniki.proxyserver.utils.BuffersPool;
+import ru.odnoklassniki.proxyserver.utils.pools.BuffersPool;
 import ru.odnoklassniki.proxyserver.utils.HandlerClosed;
 
 import java.io.IOException;

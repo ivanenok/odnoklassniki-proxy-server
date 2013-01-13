@@ -1,4 +1,4 @@
-package ru.odnoklassniki.proxyserver.utils;
+package ru.odnoklassniki.proxyserver.utils.collections;
 
 import java.util.ArrayDeque;
 import java.util.Collection;

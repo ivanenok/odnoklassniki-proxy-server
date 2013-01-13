@@ -3,9 +3,8 @@ package ru.odnoklassniki.proxyserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.odnoklassniki.proxyserver.handlers.ServerConnectionHandler;
-import ru.odnoklassniki.proxyserver.utils.Config;
-import ru.odnoklassniki.proxyserver.utils.CyclicObjectsProvider;
-import ru.odnoklassniki.proxyserver.utils.ShutdownHook;
+import ru.odnoklassniki.proxyserver.utils.collections.CyclicObjectsProvider;
+import ru.odnoklassniki.proxyserver.utils.config.Config;
 import ru.odnoklassniki.proxyserver.workers.ProxyWorker;
 
 import java.io.IOException;
@@ -83,6 +82,24 @@ public class ProxyServer {
     ProxyServer proxyServer = new ProxyServer();
     proxyServer.start();
     Runtime.getRuntime().addShutdownHook(new ShutdownHook(proxyServer));
+  }
+
+
+  private static class ShutdownHook extends Thread {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShutdownHook.class);
+
+    private final ProxyServer proxyServer;
+
+    public ShutdownHook(final ProxyServer proxyServer) {
+      this.proxyServer = proxyServer;
+    }
+
+    @Override
+    public void run() {
+      LOGGER.info("Proxy server will be stopped...");
+      proxyServer.stop();
+      LOGGER.info("Proxy server stopped.");
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-package ru.odnoklassniki.proxyserver.utils;
+package ru.odnoklassniki.proxyserver.utils.pools;
 
 import java.nio.ByteBuffer;
 

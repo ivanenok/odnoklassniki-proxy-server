@@ -51,7 +51,7 @@ public class ProxyWorker implements Runnable {
                 AbstractConnectionHandler handler = (AbstractConnectionHandler) selectionKey.attachment();
                 handler.handleKey(selectionKey);
               }
-            } catch (Throwable ioe) {
+            } catch (RuntimeException e) {
               selectionKey.cancel();
             }
           }
