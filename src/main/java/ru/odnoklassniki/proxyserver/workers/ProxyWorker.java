@@ -23,7 +23,7 @@ public class ProxyWorker implements Runnable {
 
   protected int selectionTimeOut = DEFAULT_SELECTION_TIMEOUT;
 
-  private boolean interrupted = false;
+  private volatile boolean interrupted = false;
 
   public ProxyWorker() throws IOException {
     selector = Selector.open();
